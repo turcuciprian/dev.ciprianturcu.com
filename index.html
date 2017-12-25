@@ -7,8 +7,12 @@
 </head>
 
 <body>
-  loading stuff
+  <button type="button" id="demo" name="button">Click to connect</button>
   <script type="text/javascript">
+
+  document.getElementById("demo").addEventListener("click", myFunction);
+
+  function myFunction() {
     navigator.bluetooth.requestDevice({
         filters: [{
           services: [0xffe5]
@@ -35,6 +39,7 @@
         // And of course: error handling!
         console.error('Connection failed!', error);
       });
+    };
   </script>
 
 </body>
